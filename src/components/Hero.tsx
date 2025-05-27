@@ -37,7 +37,7 @@ const Hero = () => {
               />
             </div>
             
-            <Select value={propertyType} onValueChange={setPropeertyType}>
+            <Select value={propertyType} onValueChange={setPropertyType}>
               <SelectTrigger className="h-12 text-gray-900">
                 <SelectValue placeholder="Property Type" />
               </SelectTrigger>
