@@ -18,57 +18,60 @@ interface PropertyCardProps {
 
 const PropertyCard = ({ id, image, price, address, beds, baths, sqft, type, status }: PropertyCardProps) => {
   return (
-    <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-      <div className="relative">
+    <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border-0 shadow-lg bg-white">
+      <div className="relative overflow-hidden">
         <img
           src={image}
           alt={`Property at ${address}`}
-          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         <Badge 
-          className={`absolute top-3 left-3 ${
-            status === "For Sale" ? "bg-green-600" : 
-            status === "For Rent" ? "bg-blue-600" : "bg-gray-600"
-          }`}
+          className={`absolute top-4 left-4 px-3 py-1 font-semibold ${
+            status === "For Sale" ? "bg-emerald-600 hover:bg-emerald-700" : 
+            status === "For Rent" ? "bg-teal-600 hover:bg-teal-700" : "bg-gray-600 hover:bg-gray-700"
+          } shadow-lg`}
         >
           {status}
         </Badge>
         <Button
           size="sm"
           variant="secondary"
-          className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity"
+          className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white/90 backdrop-blur-sm hover:bg-white shadow-lg"
         >
           <Heart className="h-4 w-4" />
         </Button>
       </div>
       
-      <CardContent className="p-6">
-        <div className="mb-4">
-          <h3 className="text-2xl font-bold text-blue-600 mb-1">{price}</h3>
-          <p className="text-gray-600 flex items-center">
-            <MapPin className="h-4 w-4 mr-1" />
+      <CardContent className="p-7">
+        <div className="mb-6">
+          <h3 className="text-2xl font-bold text-emerald-600 mb-2">{price}</h3>
+          <p className="text-gray-600 flex items-center text-sm">
+            <MapPin className="h-4 w-4 mr-2 text-gray-400" />
             {address}
           </p>
         </div>
         
-        <div className="flex items-center space-x-4 text-gray-600 mb-4">
+        <div className="flex items-center justify-between text-gray-600 mb-6 bg-gray-50 rounded-lg p-4">
           <div className="flex items-center">
-            <Bed className="h-4 w-4 mr-1" />
-            <span>{beds} beds</span>
+            <Bed className="h-4 w-4 mr-1 text-emerald-500" />
+            <span className="font-medium">{beds}</span>
           </div>
           <div className="flex items-center">
-            <Bath className="h-4 w-4 mr-1" />
-            <span>{baths} baths</span>
+            <Bath className="h-4 w-4 mr-1 text-emerald-500" />
+            <span className="font-medium">{baths}</span>
           </div>
           <div className="flex items-center">
-            <Square className="h-4 w-4 mr-1" />
-            <span>{sqft.toLocaleString()} sqft</span>
+            <Square className="h-4 w-4 mr-1 text-emerald-500" />
+            <span className="font-medium">{sqft.toLocaleString()}</span>
           </div>
         </div>
         
         <div className="flex justify-between items-center">
-          <Badge variant="outline">{type}</Badge>
-          <Button className="bg-blue-600 hover:bg-blue-700">View Details</Button>
+          <Badge variant="outline" className="border-emerald-200 text-emerald-700 bg-emerald-50">{type}</Badge>
+          <Button className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 shadow-lg px-6">
+            View Details
+          </Button>
         </div>
       </CardContent>
     </Card>
