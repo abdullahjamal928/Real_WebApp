@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+# Welcome to my Real_Estate project
 
 ## Project info
 
@@ -6,18 +6,11 @@
 
 ## How can I edit this code?
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
 Simply visit the [Lovable Project](https://lovable.dev/projects/1767e00a-7791-4541-b270-c82cefba7b1d) and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in.
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
 Follow these steps:
