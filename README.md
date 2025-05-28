@@ -1,58 +1,60 @@
-# Welcome to my Real_Estate project
+# Real Estate Web Application
 
-## Project info
+A modern real estate web application built with React, TypeScript, and Tailwind CSS. The application features a beautiful UI with property listings, search functionality, and responsive design.
 
-**URL**: https://lovable.dev/projects/1767e00a-7791-4541-b270-c82cefba7b1d
+## Features
 
-## How can I edit this code?
+- Modern and responsive design
+- Property search with filters
+- Featured property listings
+- Property cards with detailed information
+- Contact forms and newsletter subscription
+- Indian currency format support
+- Mobile-friendly interface
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1767e00a-7791-4541-b270-c82cefba7b1d) and start prompting.
+## Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
+- Shadcn/ui Components
+- Lucide Icons
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in.
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Getting Started
 
-Follow these steps:
+1. Clone the repository:
+```bash
+git clone [repository-url]
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2. Install dependencies:
+```bash
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Run the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Project Structure
 
-**Use GitHub Codespaces**
+```
+src/
+  ├── components/        # React components
+  ├── styles/           # Global styles
+  ├── lib/              # Utility functions
+  ├── types/            # TypeScript types
+  └── App.tsx           # Main application component
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Contributing
 
-## What technologies are used for this project?
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-This project is built with:
+## License
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/1767e00a-7791-4541-b270-c82cefba7b1d) and click on Share -> Publish.
+[MIT](https://choosealicense.com/licenses/mit/)
