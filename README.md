@@ -4,7 +4,7 @@ A modern real estate web application built with React, TypeScript, and Tailwind 
 
 ## Live Demo
 
-Visit the live application at: [Real Estate Web App](https://real-web-app.vercel.app) (Coming soon)
+Visit the live application at: [Real Estate Web App](https://real-web-app.vercel.app)
 
 ## Features
 
@@ -66,28 +66,6 @@ npm run dev
    - Open this URL in your browser
    - The page will automatically reload if you make changes to the code
 
-## Deployment
-
-### Option 1: Deploy to Vercel (Recommended)
-
-1. Fork this repository
-2. Sign up on [Vercel](https://vercel.com)
-3. Import your forked repository
-4. Vercel will automatically detect the React application and deploy it
-5. Once deployed, you'll get a unique URL to share
-
-### Option 2: Build for Production
-
-If you want to deploy to your own server:
-
-1. Create a production build:
-```bash
-npm run build
-```
-
-2. The build files will be in the `dist` directory
-3. Deploy these files to any static hosting service
-
 ## Project Structure
 
 ```
@@ -99,33 +77,6 @@ src/
   └── App.tsx           # Main application component
 ```
 
-## Sharing the Application
-
-1. **Share the Live Demo**: 
-   - Once deployed, share the Vercel URL with anyone
-   - They can access it directly from their browser without any setup
-
-2. **For Developers**:
-   - Share the GitHub repository URL
-   - They can follow the "Running Locally" instructions above
-
-3. **For Local Network Testing**:
-   - When running `npm run dev`, you'll also get a network URL
-   - Share this URL with devices on the same network
-
-## Troubleshooting
-
-If you encounter any issues:
-
-1. Make sure Node.js is properly installed
-2. Clear npm cache: `npm cache clean --force`
-3. Delete `node_modules` and run `npm install` again
-4. Check if all ports are available (default: 5173)
-
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
