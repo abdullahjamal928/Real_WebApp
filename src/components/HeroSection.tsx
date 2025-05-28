@@ -1,4 +1,4 @@
-import { Button } from './ui/Button';
+import { Button } from './ui/button';
 import { Search, MapPin, Home, DollarSign, ChevronDown } from 'lucide-react';
 
 const HeroSection = () => {

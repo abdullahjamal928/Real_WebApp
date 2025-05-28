@@ -1,5 +1,5 @@
 import { Heart, MapPin, Bed, Bath, Square, Tag } from 'lucide-react';
-import { Button } from './ui/Button';
+import { Button } from './ui/button';
 
 interface PropertyCardProps {
   image: string;
