@@ -25,7 +25,7 @@ A modern real estate web application built with React, TypeScript, and Tailwind 
 
 1. Clone the repository:
 ```bash
-git clone [repository-url]
+git clone https://github.com/abdullahjamal928/Real_WebApp.git
 ```
 
 2. Install dependencies:
@@ -38,7 +38,10 @@ npm install
 npm run dev
 ```
 
-4. Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
+4. View the application:
+   - Once the development server starts, it will show you the local URL (usually `http://localhost:5173`)
+   - Open this URL in your browser
+   - The page will automatically reload if you make changes to the code
 
 ## Project Structure
 
