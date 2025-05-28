@@ -1,79 +1,111 @@
-
-import { Heart, MapPin, Bed, Bath, Square } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Heart, MapPin, Bed, Bath, Square, Tag } from 'lucide-react';
+import { Button } from './ui/Button';
 
 interface PropertyCardProps {
-  id: number;
   image: string;
+  title: string;
   price: string;
-  address: string;
+  location: string;
   beds: number;
   baths: number;
   sqft: number;
   type: string;
-  status: "For Sale" | "For Rent" | "Sold";
 }
 
-const PropertyCard = ({ id, image, price, address, beds, baths, sqft, type, status }: PropertyCardProps) => {
+const PropertyCard = ({
+  image,
+  title,
+  price,
+  location,
+  beds,
+  baths,
+  sqft,
+  type
+}: PropertyCardProps) => {
+  // Convert price to Indian format
+  const formatIndianPrice = (price: string) => {
+    const numericPrice = parseInt(price.replace(/[^0-9]/g, ''));
+    if (numericPrice >= 10000000) {
+      return `₹${(numericPrice / 10000000).toFixed(2)} Cr`;
+    } else if (numericPrice >= 100000) {
+      return `₹${(numericPrice / 100000).toFixed(2)} Lakhs`;
+    } else {
+      return `₹${numericPrice.toLocaleString('en-IN')}`;
+    }
+  };
+
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-200 bg-white">
-      <div className="relative overflow-hidden">
+    <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+      {/* Image Container */}
+      <div className="relative aspect-[4/3] overflow-hidden">
         <img
           src={image}
-          alt={`Property at ${address}`}
-          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+          alt={title}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
         />
-        <Badge 
-          className={`absolute top-3 left-3 px-2 py-1 text-xs font-medium ${
-            status === "For Sale" ? "bg-blue-600 hover:bg-blue-700 text-white" : 
-            status === "For Rent" ? "bg-gray-600 hover:bg-gray-700 text-white" : "bg-gray-400 text-white"
-          }`}
-        >
-          {status}
-        </Badge>
-        <Button
-          size="sm"
-          variant="secondary"
-          className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity bg-white hover:bg-gray-50"
-        >
-          <Heart className="h-4 w-4" />
-        </Button>
+        <div className="absolute top-4 right-4 z-10">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="bg-white/90 hover:bg-white text-gray-600 hover:text-red-500 rounded-full shadow-lg backdrop-blur-sm"
+          >
+            <Heart className="h-5 w-5" />
+          </Button>
+        </div>
+        <div className="absolute top-4 left-4">
+          <span className="inline-block bg-primary/90 text-white px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">
+            {type}
+          </span>
+        </div>
       </div>
-      
-      <CardContent className="p-6">
-        <div className="mb-4">
-          <h3 className="text-xl font-semibold text-blue-600 mb-2">{price}</h3>
-          <p className="text-gray-600 flex items-center text-sm">
-            <MapPin className="h-4 w-4 mr-1 text-gray-400" />
-            {address}
-          </p>
-        </div>
-        
-        <div className="flex items-center justify-between text-gray-600 mb-4 py-3 px-4 bg-gray-50 rounded-lg">
-          <div className="flex items-center">
-            <Bed className="h-4 w-4 mr-1" />
-            <span className="text-sm font-medium">{beds}</span>
+
+      {/* Content */}
+      <div className="p-6 space-y-4">
+        <div className="space-y-2">
+          <div className="flex items-start justify-between gap-2">
+            <h3 className="text-xl font-semibold text-gray-900 line-clamp-2">
+              {title}
+            </h3>
+            <div className="text-right">
+              <div className="text-lg font-bold text-primary">
+                {formatIndianPrice(price)}
+              </div>
+              <div className="text-sm text-gray-500">
+                {parseInt(price.replace(/[^0-9]/g, '')) > 0 ? 'For Sale' : 'Price on Request'}
+              </div>
+            </div>
           </div>
-          <div className="flex items-center">
-            <Bath className="h-4 w-4 mr-1" />
-            <span className="text-sm font-medium">{baths}</span>
-          </div>
-          <div className="flex items-center">
-            <Square className="h-4 w-4 mr-1" />
-            <span className="text-sm font-medium">{sqft.toLocaleString()}</span>
+          <div className="flex items-center text-gray-500 space-x-1">
+            <MapPin className="h-4 w-4 text-gray-400 flex-shrink-0" />
+            <span className="text-sm truncate">{location}</span>
           </div>
         </div>
-        
-        <div className="flex justify-between items-center">
-          <Badge variant="outline" className="border-gray-300 text-gray-700">{type}</Badge>
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-4">
+
+        <div className="grid grid-cols-3 gap-4 py-4 border-t border-gray-100">
+          <div className="flex items-center space-x-2">
+            <Bed className="h-4 w-4 text-gray-400" />
+            <span className="text-sm text-gray-600">{beds} Beds</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Bath className="h-4 w-4 text-gray-400" />
+            <span className="text-sm text-gray-600">{baths} Baths</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Square className="h-4 w-4 text-gray-400" />
+            <span className="text-sm text-gray-600">{sqft} sq.ft</span>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between pt-2">
+          <Button variant="outline" className="w-[48%]">
+            Contact Agent
+          </Button>
+          <Button variant="gradient" className="w-[48%]">
             View Details
           </Button>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 };
 
